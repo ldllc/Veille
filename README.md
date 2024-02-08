@@ -68,6 +68,47 @@ Ils seront enregistrés dans un fichier CSV dans le dossier [Donnees_Groupes](CS
 
 Le script `CSV_Groupes.py` s'occupe de traiter les données des fichiers fraîchement enregistrés pour récupérer les informations communes et également les plus importantes pour les enregistrer dans le dossier [Base_Groupes](CSV/Groupes/Base_Groupes/Groupes.csv) avec comme nom de fichier `Groupes.csv`. 
 
+### 2) Attaques
+
+
+#### a) Srapper
+
+Le script `Scrapper_Attaques.py` récupère les tableaux affichant les groupes sur :
+
+- [RansomFeed](https://raw.githubusercontent.com/nuke86/ransomFeed/main/posts.json)
+- [Ransomware Live](https://data.ransomware.live/posts.json)
+
+Ils seront enregistrés dans un fichier CSV dans le dossier [Donnees_Attaques](CSV/Attaques/Donnees_Attaques) avec leur nom respectifs.
+
+
+#### b) Traitement 
+
+Le script `CSV_Attaques.py` s'occupe de traiter les données des fichiers fraîchement enregistrés pour récupérer les informations communes et également les plus importantes pour les enregistrer dans le dossier [Base_Attaques](CSV/Attaques/Base_Attaques/Attaques.csv) avec comme nom de fichier `Attaques.csv`. 
+
+### 3) Victimes
+
+Le script `Scrapper_Victimes.py` récupère les tableaux affichant les groupes sur :
+
+- [Ransomware Live](https://raw.githubusercontent.com/Casualtek/Cyberwatch/main/cyberattacks.json)
+
+Ils seront enregistrés dans un fichier CSV dans le dossier [Victimes](CSV/Victimes) avec leur nom respectifs.
+
+
+### 4) Stats
+
+#### a) Attaquants
+
+Le script `Attaquants_Retail.py` cherche dans les fichiers `Groupes.csv` et `Attaques.csv` les groupes ayant attaqué des points de vente pour les enregistrer dans le fichier `Attaquants_Retail.csv` dans le dossier [Attaquants_Retail](CSV/Stats/Attaquants_Retail).
+
+#### b) Victtimes
+
+Le script `Victimes_Retail.py` cherche dans les fichiers `Groupes.csv` et `Victimes.csv` les groupes ayant attaqué des points de vente pour les enregistrer dans le fichier Victimes_Retail.csv` dans le dossier [Victimes_Retail](CSV/Stats/Victimes_Retail).
+
+#### c) Groupes
+
+Le script `Top10_Groupes.py` se charge de déterminer les 10 groupes les plus actifs de la journée, de la journée précédente, du mois, du mois précédent, de l'année et de l'année précédente. Ces données seront enregistrées dans le dossier [Activites](CSV/Stats/Activites)
+
+### 5) Excel
 
 
 
