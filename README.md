@@ -106,24 +106,17 @@ Le script `Victimes_Retail.py` cherche dans les fichiers `Groupes.csv` et `Victi
 
 #### c) Groupes
 
-Le script `Top10_Groupes.py` se charge de déterminer les 10 groupes les plus actifs de la journée, de la journée précédente, du mois, du mois précédent, de l'année et de l'année précédente. Ces données seront enregistrées dans le dossier [Activites](CSV/Stats/Activites)
+Le script `Top10_Groupes.py` se charge de déterminer les 10 groupes les plus actifs de la journée, de la journée précédente, du mois, du mois précédent, de l'année et de l'année précédente. Ces données seront enregistrées dans le dossier [Activites](CSV/Stats/Activites).
+
+#### d) Comptes
+
+Le script `Comptes_Attaques.py` se charge de compter le nombre d'attaques dans la journée, de la journée précédente, du mois, du mois précédent, de l'année et de l'année précédente. Ces données seront enregistrées dans le fichier `Day_Stats.csv` se trouvant dans le dossier [Comptes](CSV/Stats/Comptes).
 
 ### 5) Excel
 
+Le script `Excel.py` se charge de récupérer les fichiers de stats, mais également les fichiers `Groupes.csv`, `Attaques.csv` et `Victimes.csv` pour les mettre dans le fichier Excel `Veille.xlsx` sous forme de tableau. Il y aura une feuille par fichiers.
 
+## V - Définitions
 
-
-
-
-
-
-
-
-
-
-
-
-Les Définitions
-
-- CVS, (Concurrent Version System) est un outil permettant de gérer l'évolution dans le temps d'un ensemble de fichiers
+- CSV, (Concurrent Version System) est un outil permettant de gérer l'évolution dans le temps d'un ensemble de fichiers
 
