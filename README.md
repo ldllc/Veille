@@ -2,9 +2,7 @@
 
 ## I - Qu'est ce que la veille
 
-Faire la veille, c'est rechercher et collecter des informations pertinentes pour l'entreprise, pour ensuite s'en servir dans la prise de décision. 
-
-C'est se tenir au courant de ce qui se dit sur l'entreprise, sur les concurrents, sur le secteur d'activité et sur ce qui peut l'impacter.
+La veille en cybersécurité consiste en une surveillance continue des menaces et des vulnérabilités informatiques pour anticiper les risques potentiels. Les professionnels utilisent cette approche pour rester informés des dernières tendances, attaques émergentes et développements technologiques pertinents, renforçant ainsi la défense des systèmes d'information. C'est une composante essentielle pour maintenir une posture de sécurité proactive et protéger efficacement les données et les réseaux.
 
 ## II - Fonctionnement
 
