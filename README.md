@@ -15,7 +15,7 @@ Le code commence par récupérer les tableaux des sites concernés, à savoir :
 - [Ransom-DB](https://www.ransom-db.com/)
 - [Ransomware Live](https://www.ransomware.live/#/)
 
-Les tableaux sont récupérés et stockés dans des fichiers CSV<sup>*1</sup> avec leurs noms respectifs.
+Les tableaux sont récupérés et stockés dans des fichiers CSV<sup>1</sup> avec leurs noms respectifs.
 
 ### Deuxième partie : traitement des données
 
@@ -117,4 +117,5 @@ Le script `Excel.py` se charge de récupérer les fichiers de stats, mais égale
 ## V - Définitions
 
 - CSV, (Concurrent Version System) est un outil permettant de gérer l'évolution dans le temps d'un ensemble de fichiers
+- Le terme Scraping (Scrap ou Scraper) fait référence à une technique qui consiste à copier du contenu à partir d'un autre site web en utilisant un logiciel ou un programme informatique spécifique.
 
