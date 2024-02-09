@@ -69,7 +69,7 @@ Le script `CSV_Groupes.py` s'occupe de traiter les données des fichiers fraîch
 ### 2) Attaques
 
 
-#### a) Srapper
+#### a) Scrapper
 
 Le script `Scrapper_Attaques.py` récupère les tableaux affichant les groupes sur :
 
