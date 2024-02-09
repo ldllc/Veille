@@ -50,7 +50,7 @@ le code fonctionne sur pyhton et nécessite les dépendances présentes dans le 
 
 ### 1) Groupes
 
-#### a) Srapper
+#### a) Srapper<sup>2</sup>
 
 Le script `Scrapper_Groupes.py` récupère les tableaux affichant les groupes sur :
 
