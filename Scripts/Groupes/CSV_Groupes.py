@@ -8,6 +8,11 @@ ransomfeed_df = pd.read_csv(os.path.join(script_directory, '../../CSV/Groupes/Do
 ransomdb_df = pd.read_csv(os.path.join(script_directory, '../../CSV/Groupes/Donnees_Groupes/Ransomdb.csv'), delimiter='|')
 ransomwarelive_df = pd.read_csv(os.path.join(script_directory, '../../CSV/Groupes/Donnees_Groupes/Ransomwarelive.csv'), delimiter='|')
 
+mitre_df['Name'] = mitre_df['Name'].str.lower()
+ransomfeed_df['name'] = ransomfeed_df['name'].str.lower()
+ransomdb_df['Group Name'] = ransomdb_df['Group Name'].str.lower()
+ransomwarelive_df['name'] = ransomwarelive_df['name'].str.lower()
+
 mitre_names = set(mitre_df['Name'].tolist())
 ransomfeed_names = set(ransomfeed_df['name'].tolist())
 ransomdb_names = set(ransomdb_df['Group Name'].tolist())
@@ -62,7 +67,10 @@ for group_name in bdd_df['Name']:
     else:
         description_list.append('not provided')
 
-    if group_name in ransomwarelive_names:
+    if group_name in ['arvin_club', 'arvinclub', 'avoslocker']:
+        row = bdd_df[bdd_df['Name'] == group_name].iloc[0]
+        sources_list.append(row['Sources'])
+    elif group_name in ransomwarelive_names:
         row = ransomwarelive_df[ransomwarelive_df['name'] == group_name].iloc[0]
         fqdn = row.get('fqdn', 'not provided')
         slug = row.get('slug', 'not provided')
@@ -84,6 +92,22 @@ bdd_df['Sources'] = sources_list
 bdd_df['First Letter'] = bdd_df['Name'].str[0].str.lower()
 bdd_df = bdd_df.sort_values(by=['First Letter', 'Name'], key=lambda x: x.str.lower())
 bdd_df = bdd_df.drop(columns=['First Letter'])
+
+combined_names = {'arvin_club': 'arvinclub', 'avoslocker': 'avos_locker'}
+bdd_df['Name'] = bdd_df['Name'].replace(combined_names)
+bdd_df['Name'] = bdd_df['Name'].replace({'avos_locker': 'avoslocker'})
+bdd_df['Name'] = bdd_df['Name'].replace({'avos locker': 'avoslocker'})
+bdd_df['Name'] = bdd_df['Name'].replace({'mount-locker': 'mount locker'})
+bdd_df['Name'] = bdd_df['Name'].replace({'n3tworm': 'n3tw0rm'})
+bdd_df['Name'] = bdd_df['Name'].replace({'payload.bin': 'payloadbin'})
+bdd_df['Name'] = bdd_df['Name'].replace({'pysa (mespinoza)': 'pysa'})
+bdd_df['Name'] = bdd_df['Name'].replace({'ragnar locker': 'ragnarlocker'})
+bdd_df['Name'] = bdd_df['Name'].replace({'red alert': 'redalert'})
+bdd_df['Name'] = bdd_df['Name'].replace({'revil sodinokibi': 'revil'})
+bdd_df['Name'] = bdd_df['Name'].replace({'vice society': 'vicesociety'})
+bdd_df['Name'] = bdd_df['Name'].replace({'xing locker': 'xinglocker'})
+
+bdd_df.drop_duplicates(subset='Name', inplace=True)
 
 csv_path = os.path.join(script_directory, '../../CSV/Groupes/Base_Groupes/Groupes.csv')
 bdd_df.to_csv(csv_path, index=False, sep='|')
