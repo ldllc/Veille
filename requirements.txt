@@ -1,0 +1,9 @@
+requests
+pandas
+openpyxl
+lxml
+pyarrow
+selenium
+bs4
+eventregistry
+customtkinter
